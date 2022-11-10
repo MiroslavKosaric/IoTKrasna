@@ -1,6 +1,8 @@
 <?php
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <!DOCTYPE html>
+    <html lang="sk">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,12 +21,12 @@
             <h2 class="heading">IPAIOT WEB FORM</h2>
             <form action="getData.php" method="post">
                 <label for="name">Vaše meno</label>
-                <input type="text" id="name" name="Meno" placeholder="Meno" autofocus>
-                <input type="text" id="surname" placeholder="Priezvisko">
+                <input type="text" id="name" name="name" placeholder="Meno" autofocus>
+                <input type="text" id="surname" name="surname" placeholder="Priezvisko">
 
                 <br><br>
                 <label for="num">Telefónne číslo</label>
-                <input type="tel" id="num" placeholder="0912345678">
+                <input type="tel" id="num" name="num" placeholder="0912345678">
 
                 <br><br>
                 <label for="like">Páči sa ti IPaIoT?</label>
@@ -36,11 +38,11 @@
 
                 <br><br>
                 <label for="favColor">Obľúbená farba?</label>
-                <input type="color" id="favColor">
+                <input type="color" id="favColor" name="color">
 
                 <br><br>
                 <label for="opinion">Názor na predmet</label>
-                <input type="text" id="opinion">
+                <input type="text" id="opinion" name="opinion">
 
                 <br><br><br><br>
                 <hr>
@@ -48,4 +50,5 @@
             </form>
         </div>
     </body>
+    </html>
 ?>

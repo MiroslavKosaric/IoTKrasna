@@ -2,7 +2,7 @@
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $num = $_POST['num'];
-    $like = $_POST['like'];
+    $isLiked = $_POST['isLiked'];
     $favColor = $_POST['favColor'];
     $opinion = $_POST['opinion'];
 
