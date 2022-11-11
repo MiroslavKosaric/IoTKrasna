@@ -2,15 +2,15 @@
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+    if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
         $nameError = "Tvoje krstné meno nie je zapísané správne";
-    } elseif ($name == "") {
+    } elseif (empty($_POST['name'])) {
         $nameError = "Musíš zadať krstné meno";
     }
 
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$surname)) {
+    if (!preg_match("/^[a-zA-Z-' ]*$/", $surname)) {
         $nameError = "Tvoje priezvisko nie je zapísané správne.";
-    } elseif ($surname == "") {
+    } elseif (empty($_POST['surname'])) {
         $nameError = "Musíš zadať priezvisko";
     }
 
@@ -19,6 +19,8 @@
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $emailError = "Email zapísaný v nesprávnom formáte.";
+    } elseif (empty($_POST['email'])) {
+        $emailError = "Musíš zadať email."
     }
 
     if (isset($_POST['isLiked'])) {
