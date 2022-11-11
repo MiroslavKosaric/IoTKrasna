@@ -66,7 +66,7 @@
 
             <br><br>
             <label for="favColor">Obľúbená farba?</label>
-            <input type="color" id="favColor" name="color" value="<?= htmlspecialchars($_POST['favColor']) ?>">
+            <input type="color" id="favColor" name="color" value="<?php htmlspecialchars($_POST['favColor']) ?>">
 
             <br><br>
             <label for="opinion">Názor na predmet</label>
