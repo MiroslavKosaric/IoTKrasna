@@ -1,4 +1,5 @@
-<script type="text/javascript">
+<?php
+    <script type="text/javascript">
     function notTyped() {
         echo '<h1>HALO</h1>';
     }
@@ -6,9 +7,7 @@
     function thanks() {
             alert("Ďakujem za vyplnenie dotazníka");
     }
-</script>
-
-<?php
+    </script>
 
     notTyped();
 
