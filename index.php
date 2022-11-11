@@ -1,18 +1,6 @@
 <?php
-    /*
-    <script type="text/javascript">
-    function notTyped() {
-        echo '<h1>HALO</h1>';
-    }
-
-    function thanks() {
-            alert("Ďakujem za vyplnenie dotazníka");
-    }
-    </script>
-
     notTyped();
-    */
-    
+
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     
@@ -50,8 +38,8 @@
 
     $text = "Meno: " . $name . " " . $surname . "\r\n";
     $text .= "Telefonne cislo: " . $num . "\r\n";
+    $text .= "Email: " . $email . "\r\n";
     $text .= "Paci sa mu/jej IPaIoT: " . $isLiked . "\r\n";
-    $text .= "Oblubena farba: " . $favColor . "\r\n";
     $text .= "Nazor na predmet: " . $opinion;
 
     $data = fopen("data.txt", "w") or die("Unable to open file!");
@@ -59,6 +47,16 @@
 
     fclose($data);
 ?>
+
+<script type="text/javascript">
+    function notTyped() {
+        echo '<h1>HALO</h1>';
+    }
+
+    function thanks() {
+            alert("Ďakujem za vyplnenie dotazníka");
+    }
+</script>
 
 <!DOCTYPE html>
 <html lang="sk">
@@ -70,10 +68,6 @@
     <title>IPaIoT Web Form</title>
 </head>
 <body>
-    <script type="text/javascript">
-        
-    </script>
-
     <div class="formDiv">
         <h2 class="heading">IPAIOT WEB FORM</h2>
         <form action="/" method="post">
