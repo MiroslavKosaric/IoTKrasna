@@ -1,7 +1,21 @@
 <?php
     $name = $_POST['name'];
     $surname = $_POST['surname'];
+    
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+        $nameError = "Tvoje krstné meno nie je zapísané správne";
+    }
+
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$surname)) {
+        $nameError = "Tvoje priezvisko nie je zapísané správne.";
+    }
+
     $num = $_POST['num'];
+    $email = $_POST['email'];
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailError = "Email zapísaný v nesprávnom formáte.";
+    }
 
     if (isset($_POST['isLiked'])) {
         $isLiked = "Ano";
@@ -11,10 +25,7 @@
         $isLiked = "";
     }
 
-    if (isset($_POST['favColor'])) {
-        $favColor = $_POST['favColor'];
-    }
-
+    $favColor = $_POST['favColor'];
     $opinion = $_POST['opinion'];
 
     $text = "Meno: " . $name . " " . $surname . "\r\n";
@@ -56,6 +67,9 @@
             <label for="num">Telefónne číslo</label>
             <input type="tel" id="num" name="num" placeholder="0912345678">
 
+            <label for="email">Emailová adresa</label>
+            <input type="email" id="email" name="email" placeholder="meno@mail.com">
+
             <br><br>
             <label for="like">Páči sa ti IPaIoT?</label>
             <input type="radio" id="like" name="isLiked" class="like">
@@ -66,7 +80,7 @@
 
             <br><br>
             <label for="favColor">Obľúbená farba?</label>
-            <input type="color" id="favColor" name="color" value="<?php echo $favColor; ?>">
+            <input type="color" id="favColor" name="color" value="<?php $favColor = $_GET['color']; ?>">
 
             <br><br>
             <label for="opinion">Názor na predmet</label>
