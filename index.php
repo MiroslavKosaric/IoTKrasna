@@ -7,10 +7,10 @@
     $opinion = $_POST['opinion'];
 
     $text = "Meno: " . $name . " " . $surname . "\r\n";
-    $text .= "Telefónne číslo: " . $num . "\r\n";
-    $text .= "Páči sa mu/jej IPaIoT: " . $isLiked . "\r\n";
-    $text .= "Obľúbená farba: " . $favColor . "\r\n";
-    $text .= "Názor na predmet: " . $opinion;
+    $text .= "Telefonne cislo: " . $num . "\r\n";
+    $text .= "Paci sa mu/jej IPaIoT: " . $isLiked . "\r\n";
+    $text .= "Oblubena farba: " . $favColor . "\r\n";
+    $text .= "Nazor na predmet: " . $opinion;
 
     $data = fopen("data.txt", "w") or die("Unable to open file!");
     fwrite($data, $text);
