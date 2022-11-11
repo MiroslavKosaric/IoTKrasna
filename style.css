@@ -56,27 +56,25 @@ input {
 }
 
 input[type="tel"] {
-    margin-left: 9%;
+    margin-left: 8%;
 }
 
 input[type="radio"] {
     margin-left: 7%;
 }
 
-input[type="color"] {
-    margin-left: 6.5%;
-    height: 2.5rem;
-    display: inline-block;
-}
-
 input[id="opinion"] {
-    margin-left: 4.75%;
+    margin-left: 5%;
     width: 58.5%;
     text-align: left;
 }
 
 input[name="meno"] {
     margin-left: 13.25%;
+}
+
+input[name="email"] {
+    margin-left: 7%;
 }
 
 textarea {
