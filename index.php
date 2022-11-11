@@ -4,10 +4,14 @@
     
     if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
         $nameError = "Tvoje krstné meno nie je zapísané správne";
+    } elseif ($name == "") {
+        $nameError = "Musíš zadať krstné meno";
     }
 
     if (!preg_match("/^[a-zA-Z-' ]*$/",$surname)) {
         $nameError = "Tvoje priezvisko nie je zapísané správne.";
+    } elseif ($surname == "") {
+        $nameError = "Musíš zadať priezvisko";
     }
 
     $num = $_POST['num'];
