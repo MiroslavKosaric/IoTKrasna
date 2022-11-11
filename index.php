@@ -2,11 +2,13 @@
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $num = $_POST['num'];
+    
     if ($_POST['isLiked']) {
         $isLiked = "Ano";
     } else {
         $isLiked = "Nie";
     }
+
     $favColor = $_POST['favColor'];
     $opinion = $_POST['opinion'];
 
