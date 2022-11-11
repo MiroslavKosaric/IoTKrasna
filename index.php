@@ -2,8 +2,8 @@
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $num = $_POST['num'];
-    
-    if ($_POST['isLiked']) {
+
+    if ($_POST['isLiked'] == on) {
         $isLiked = "Ano";
     } else {
         $isLiked = "Nie";
