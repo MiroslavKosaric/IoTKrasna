@@ -3,17 +3,18 @@
     $surname = $_POST['surname'];
     $num = $_POST['num'];
 
-    if ($_POST['isLiked'] == on) {
+    if (isset($_POST['isLiked'])) {
         $isLiked = "Ano";
-    } else {
+    } elseif (isset($_POST['isNotLiked'])) {
         $isLiked = "Nie";
+    } else {
+        $isLiked = "";
     }
 
     if (isset($_POST['favColor'])) {
         $favColor = $_POST['favColor'];
     }
 
-    //$favColor = $_POST['favColor'];
     $opinion = $_POST['opinion'];
 
     $text = "Meno: " . $name . " " . $surname . "\r\n";
@@ -65,7 +66,7 @@
 
             <br><br>
             <label for="favColor">Obľúbená farba?</label>
-            <input type="color" id="favColor" name="color">
+            <input type="color" id="favColor" name="color" value="<?= htmlspecialchars($_POST['favColor']) ?>">
 
             <br><br>
             <label for="opinion">Názor na predmet</label>
