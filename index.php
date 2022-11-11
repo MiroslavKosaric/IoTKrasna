@@ -36,7 +36,7 @@
 
     <div class="formDiv">
         <h2 class="heading">IPAIOT WEB FORM</h2>
-        <form action="index.php" method="post">
+        <form action="/" method="post">
             <label for="name">Vaše meno</label>
             <input type="text" id="name" name="name" placeholder="Meno" autofocus>
             <input type="text" id="surname" name="surname" placeholder="Priezvisko">
