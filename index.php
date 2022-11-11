@@ -50,7 +50,7 @@
             <input type="radio" id="like" name="isLiked" class="like">
             <p class="ano">Áno</p>
 
-            <input type="radio" id="like" name="isLiked" class="disLike">
+            <input type="radio" id="like" name="isNotLiked" class="disLike">
             <p class="nie">Nie</p>
 
             <br><br>
