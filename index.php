@@ -71,6 +71,7 @@
             <label for="num">Telefónne číslo</label>
             <input type="tel" id="num" name="num" placeholder="0912345678">
 
+            <br><br>
             <label for="email">Emailová adresa</label>
             <input type="email" id="email" name="email" placeholder="meno@mail.com">
 
