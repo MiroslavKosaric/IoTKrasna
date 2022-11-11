@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <?php
     $name = $_POST['name'];
     $surname = $_POST['surname'];
@@ -48,6 +46,7 @@
     fclose($data);
 ?>
 
+<!DOCTYPE html>
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
