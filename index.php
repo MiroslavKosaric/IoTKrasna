@@ -1,4 +1,5 @@
 <?php
+    /*
     <script type="text/javascript">
     function notTyped() {
         echo '<h1>HALO</h1>';
@@ -10,7 +11,8 @@
     </script>
 
     notTyped();
-
+    */
+    
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     
