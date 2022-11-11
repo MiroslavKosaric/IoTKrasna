@@ -9,7 +9,11 @@
         $isLiked = "Nie";
     }
 
-    $favColor = $_POST['favColor'];
+    if (isset($_POST['favColor'])) {
+        $favColor = $_POST['favColor'];
+    }
+
+    //$favColor = $_POST['favColor'];
     $opinion = $_POST['opinion'];
 
     $text = "Meno: " . $name . " " . $surname . "\r\n";
