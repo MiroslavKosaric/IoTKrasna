@@ -1,4 +1,17 @@
+<script type="text/javascript">
+    function notTyped() {
+        echo '<h1>HALO</h1>';
+    }
+
+    function thanks() {
+            alert("Ďakujem za vyplnenie dotazníka");
+    }
+</script>
+
 <?php
+
+    notTyped();
+
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     
@@ -57,9 +70,7 @@
 </head>
 <body>
     <script type="text/javascript">
-        function thanks() {
-            alert("Ďakujem za vyplnenie dotazníka");
-        }
+        
     </script>
 
     <div class="formDiv">
