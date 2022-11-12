@@ -1,10 +1,18 @@
 <?php
     $name = $_POST['name'];
     $surname = $_POST['surname'];
-    $num = $_POST['num'];
+    $num = "";
     $email = $_POST['email'];
     $isLiked = "";
     $opinion = $_POST['opinion'];
+
+    if (isset($_POST['num'])) {
+        if (is_numeric($num)) {
+            $num = $_POST['num'];
+        } else {
+            echo '<h3>Telefónne číslo nesmie obsahovať písmená.</h3>';   
+        }
+    }
 
     if (isset($_POST['isLiked'])) {
         $answers = array('Ano', 'Nie');
