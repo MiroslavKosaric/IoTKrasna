@@ -16,7 +16,7 @@
             $nameError = "Meno sa musí skladať z písmen.";   
         }
     } else {
-        $nameError = "Priezvisko je povinné.";
+        $nameError = "Meno je povinné.";
     }
 
     if (isset($_POST['surname'])) {
@@ -87,7 +87,7 @@
             <br><br>
             <label for="num">Telefónne číslo</label>
             <input type="tel" id="num" name="num" placeholder="0912345678">
-            <span class="required">* <?php echo $nameError;?></span>
+            <span class="required">* <?php echo $numError;?></span>
 
             <br><br>
             <label for="email">Emailová adresa</label>
