@@ -27,13 +27,30 @@
     }
     */
 
+    $isLiked = "";
+
+    if (isset($_POST['isLiked'])) {
+        $answers = array('Ano', 'Nie');
+        $chosen = $_POST['isLiked'];
+
+        if (in_array($chosen, $answers)) {
+            if(strcasecmp($chosen, 'Ano') == 0) {
+                $isLiked = "Ano";
+            } else {
+                $isLiked = "Nie";
+            }
+        }
+    }
+
+    /*
     if (isset($_POST['isLiked'])) {
         $isLiked = "Ano";
-    } elseif (isset($_POST['isNotLiked'])) {
+    } elseif (isset($_POST['isLiked'])) {
         $isLiked = "Nie";
     } else {
         $isLiked = "";
     }
+    */
 
     $opinion = $_POST['opinion'];
 
@@ -75,10 +92,10 @@
 
             <br><br>
             <label for="like">Páči sa ti IPaIoT?</label>
-            <input type="radio" id="like" name="isLiked" class="like">
+            <input type="radio" id="like" name="isLiked" class="like" value="Ano">
             <p class="ano">Áno</p>
 
-            <input type="radio" id="like" name="isNotLiked" class="disLike">
+            <input type="radio" id="like" name="isLiked" class="disLike" value="Nie">
             <p class="nie">Nie</p>
 
             <br><br>
