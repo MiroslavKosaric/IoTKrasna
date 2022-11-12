@@ -1,10 +1,12 @@
 <?php
-    $name = "";
-    $surname = $_POST['surname'];
-    $num = "";
+
+    // data variables
+    $name = $surname = $num = $isLiked = "";
     $email = $_POST['email'];
-    $isLiked = "";
     $opinion = $_POST['opinion'];
+    
+    // error variables
+    $nameError = $surnameError = $numError = "";
 
     // skontroluje ci je meno zlozene len z pismen
     if (var_dump(IntlChar::isalpha($_POST['name']))) {
@@ -12,13 +14,20 @@
     } else {
         $nameError = "Meno sa musí skladať z písmen.";   
     }
+    if (var_dump(IntlChar::isalpha($_POST['surname']))) {
+        $surname = $_POST['surname'];
+    } else {
+        $surnameError = "Priezvisko sa musí skladať z písmen.";   
+    }
 
+    // skontroluje ci je telefonne cislo zlozene len z cisiel
     if (isset($_POST['num'])) {
         if (is_numeric($num)) {
             $num = $_POST['num'];
         }
     }
-
+    
+    // zisti aku moznost ano/nie pouzivatel zaskrtol
     if (isset($_POST['isLiked'])) {
         $answers = array('Ano', 'Nie');
         $chosen = $_POST['isLiked'];
