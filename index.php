@@ -1,10 +1,17 @@
 <?php
-    $name = $_POST['name'];
+    $name = "";
     $surname = $_POST['surname'];
     $num = "";
     $email = $_POST['email'];
     $isLiked = "";
     $opinion = $_POST['opinion'];
+
+    // skontroluje ci je meno zlozene len z pismen
+    if (var_dump(IntlChar::isalpha($_POST['name']))) {
+        $name = $_POST['name'];
+    } else {
+        $nameError = "Meno sa musí skladať z písmen.";   
+    }
 
     if (isset($_POST['num'])) {
         if (is_numeric($num)) {
