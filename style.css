@@ -93,3 +93,7 @@ hr {
     margin-bottom: 5%;
     width: 100%;
 }
+
+.required {
+    color: red;   
+}
