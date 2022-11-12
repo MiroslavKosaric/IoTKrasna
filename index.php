@@ -1,7 +1,11 @@
 <?php
     $name = $_POST['name'];
     $surname = $_POST['surname'];
-    
+    $num = $_POST['num'];
+    $email = $_POST['email'];
+    $isLiked = "";
+    $opinion = $_POST['opinion'];
+
     /*
     if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
         $nameError = "Tvoje krstné meno nie je zapísané správne";
@@ -16,18 +20,11 @@
     }
     */
 
-    $num = $_POST['num'];
-    $email = $_POST['email'];
-
-    /*
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $emailError = "Email zapísaný v nesprávnom formáte.";
     } elseif (empty($_POST['email'])) {
         $emailError = "Musíš zadať email."
     }
-    */
-
-    $isLiked = "";
 
     if (isset($_POST['isLiked'])) {
         $answers = array('Ano', 'Nie');
@@ -42,17 +39,7 @@
         }
     }
 
-    /*
-    if (isset($_POST['isLiked'])) {
-        $isLiked = "Ano";
-    } elseif (isset($_POST['isLiked'])) {
-        $isLiked = "Nie";
-    } else {
-        $isLiked = "";
-    }
-    */
-
-    $opinion = $_POST['opinion'];
+    
 
     $text = "Meno: " . $name . " " . $surname . "\r\n";
     $text .= "Telefonne cislo: " . $num . "\r\n";
