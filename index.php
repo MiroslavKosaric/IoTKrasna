@@ -9,8 +9,6 @@
     if (isset($_POST['num'])) {
         if (is_numeric($num)) {
             $num = $_POST['num'];
-        } else {
-            echo '<h3>Telefónne číslo nesmie obsahovať písmená.</h3>';   
         }
     }
 
