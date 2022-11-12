@@ -19,20 +19,6 @@
         }
     }
 
-    /*
-    if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
-        $nameError = "Tvoje krstné meno nie je zapísané správne";
-    } elseif (empty($_POST['name'])) {
-        $nameError = "Musíš zadať krstné meno";
-    }
-
-    if (!preg_match("/^[a-zA-Z-' ]*$/", $surname)) {
-        $surnameError = "Tvoje priezvisko nie je zapísané správne.";
-    } elseif (empty($_POST['surname'])) {
-        $surnameError = "Musíš zadať priezvisko";
-    }
-    */
-
     $text = "Meno: " . $name . " " . $surname . "\r\n";
     $text .= "Telefonne cislo: " . $num . "\r\n";
     $text .= "Email: " . $email . "\r\n";
