@@ -33,11 +33,6 @@
     }
     */
 
-    // email validation
-    if (empty($_POST['email'])) {
-        $emailError = "Musíš zadať email."
-    }
-
     $text = "Meno: " . $name . " " . $surname . "\r\n";
     $text .= "Telefonne cislo: " . $num . "\r\n";
     $text .= "Email: " . $email . "\r\n";
