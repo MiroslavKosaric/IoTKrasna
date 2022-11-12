@@ -31,7 +31,7 @@
 
     // skontroluje ci je telefonne cislo zlozene len z cisiel
     if (isset($_POST['num'])) {
-        if (is_numeric($num)) {
+        if (is_numeric($_POST['num'])) {
             $num = $_POST['num'];
         } else {
             $numError = "Telefónne číslo sa musí skladať len z čísiel vo formáte 09...";   
