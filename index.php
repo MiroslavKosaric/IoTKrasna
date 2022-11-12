@@ -9,22 +9,35 @@
     $nameError = $surnameError = $numError = "";
 
     // skontroluje ci je meno zlozene len z pismen
-    if (var_dump(IntlChar::isalpha($_POST['name']))) {
-        $name = $_POST['name'];
+    if (isset($_POST['name'])) {
+        if (var_dump(IntlChar::isalpha($_POST['name']))) {
+            $name = $_POST['name'];
+        } else {
+            $nameError = "Meno sa musí skladať z písmen.";   
+        }
     } else {
-        $nameError = "Meno sa musí skladať z písmen.";   
+        $nameError = "Priezvisko je povinné.";
     }
-    if (var_dump(IntlChar::isalpha($_POST['surname']))) {
-        $surname = $_POST['surname'];
+
+    if (isset($_POST['surname'])) {
+        if (var_dump(IntlChar::isalpha($_POST['surname']))) {
+            $surname = $_POST['surname'];
+        } else {
+            $surnameError = "Priezvisko sa musí skladať z písmen.";   
+        }
     } else {
-        $surnameError = "Priezvisko sa musí skladať z písmen.";   
+        $surnameError = "Priezvisko je povinné.";
     }
 
     // skontroluje ci je telefonne cislo zlozene len z cisiel
     if (isset($_POST['num'])) {
         if (is_numeric($num)) {
             $num = $_POST['num'];
+        } else {
+            $numError = "Telefónne číslo sa musí skladať len z čísiel vo formáte 09...";   
         }
+    } else {
+        $numError = "Telefónne číslo je povinné.";   
     }
     
     // zisti aku moznost ano/nie pouzivatel zaskrtol
@@ -69,10 +82,12 @@
             <input type="text" id="name" name="name" placeholder="Meno" autofocus>
             <span class="required">* <?php echo $nameError;?></span>
             <input type="text" id="surname" name="surname" placeholder="Priezvisko">
+            <span class="required">* <?php echo $surnameError;?></span>
 
             <br><br>
             <label for="num">Telefónne číslo</label>
             <input type="tel" id="num" name="num" placeholder="0912345678">
+            <span class="required">* <?php echo $nameError;?></span>
 
             <br><br>
             <label for="email">Emailová adresa</label>
