@@ -14,7 +14,13 @@
             if (ctype_alpha(trim($_POST['name']))) {
                 $name = trim($_POST['name']);
                 $nameEnteredRight = true;
-            } else {
+            } 
+            // detegovanie cinskych znakov
+            elseif (preg_match("/\p{Han}+/u", $bio)) {
+                $name = trim($_POST['name']);
+                $nameEnteredRight = true;
+            }
+            else {
                 $nameError = "Meno sa musí skladať iba z písmen.";   
             }
         }
@@ -26,7 +32,13 @@
             if (ctype_alpha(trim($_POST['surname']))) {
                 $surname = trim($_POST['surname']);
                 $surnameEnteredRight = true;
-            } else {
+            } 
+            // detegovanie cinskych znakov
+            elseif (preg_match("/\p{Han}+/u", $bio)) {
+                $surname = trim($_POST['surname']);
+                $surnameEnteredRight = true;
+            }
+            else {
                 $surnameError = "Priezvisko sa musí skladať iba z písmen.";   
             }
         } 
@@ -147,9 +159,3 @@
     </div>
 </body>
 </html>
-
-<script type="text/javascript">
-    function thanks() {
-        alert("Ďakujem za vyplnenie dotazníka");
-    }
-</script>
