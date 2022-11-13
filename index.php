@@ -96,10 +96,12 @@
         <h2 class="heading">IPAIOT WEB FORM</h2>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
             <label for="name">Vaše meno</label>
+            <div>
             <input type="text" id="name" name="name" placeholder="Meno" autofocus>
             <span class="required">* <?php echo $nameError;?></span>
             <input type="text" id="surname" name="surname" placeholder="Priezvisko">
             <span class="required">* <?php echo $surnameError;?></span>
+            </div>
 
             <br><br>
             <label for="num">Telefónne číslo</label>
