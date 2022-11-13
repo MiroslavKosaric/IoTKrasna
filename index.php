@@ -35,7 +35,7 @@
         if (empty($_POST["num"])) {
             $numError = "Telefónne číslo je povinné.";  
         } else {
-            if (is_numeric($_POST['num'])) {
+            if (ctype_digit($_POST['num'])) {
                 $num = $_POST['num'];
                 $numEnteredRight = true;
             } else {
