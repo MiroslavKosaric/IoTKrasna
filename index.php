@@ -90,7 +90,7 @@
 
             fclose($data);
 
-            thanks();
+            echo '<script type="text/javascript"> thanks() </script>';
         }
     }
 ?>
