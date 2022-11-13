@@ -30,20 +30,21 @@
             }
         } 
 
-        /*
         // skontroluje ci je telefonne cislo zlozene len z cisiel
-        if (isset($_POST['num'])) {
+        if (empty($_POST["num"])) {
+            $numError = "Telefónne číslo je povinné.";  
+        } else {
             if (is_numeric($_POST['num'])) {
                 $num = $_POST['num'];
             } else {
                 $numError = "Telefónne číslo sa musí skladať len z čísiel vo formáte 09...";   
             }
-        } elseif (empty($_POST["num"])) {
-            $numError = "Telefónne číslo je povinné.";   
-        } 
-        
+        }  
+
         // zisti aku moznost ano/nie pouzivatel zaskrtol
-        if (isset($_POST['isLiked'])) {
+        if (empty($_POST["isLiked"])) {
+            $isLiked = "";
+        } else {
             $answers = array('Ano', 'Nie');
             $chosen = $_POST['isLiked'];
 
@@ -54,9 +55,7 @@
                     $isLiked = "Nie";
                 }
             }
-        } elseif (empty($_POST["isLiked"])) {
-            $isLiked = "";
-        }
+        } 
 
         // uloží email
         if (empty($_POST['email'])) {
@@ -71,7 +70,6 @@
         } else {
             $opinion = $_POST['opinion'];
         }
-        */
     }
 
     $text = "Meno: " . $name . " " . $surname . "\r\n";
