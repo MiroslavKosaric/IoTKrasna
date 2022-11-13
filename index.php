@@ -1,75 +1,71 @@
 <?php
-
     // data variables
     $name = $surname = $num = $isLiked = $email = $opinion = "";
     
     // error variables
     $nameError = $surnameError = $numError = "";
-
-    // ak sa dotaznik odoslal skontroluju sa hodnoty
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // skontroluje ci je meno zlozene len z pismen
-        if (isset($_POST['name'])) {
-            if (var_dump(IntlChar::isalpha($_POST['name']))) {
-                $name = $_POST['name'];
-            } else {
-                $nameError = "Meno sa musí skladať z písmen.";   
-            }
-        } elseif (empty($_POST["name"])) {
-            $nameError = "Meno je povinné.";
-        }
-
-        // skontroluje ci je priezvisko zlozene len z pismen
-        if (isset($_POST['surname'])) {
-            if (var_dump(IntlChar::isalpha($_POST['surname']))) {
-                $surname = $_POST['surname'];
-            } else {
-                $surnameError = "Priezvisko sa musí skladať z písmen.";   
-            }
-        } elseif (empty($_POST["surname"])) {
-            $surnameError = "Priezvisko je povinné.";
-        }
-
-        // skontroluje ci je telefonne cislo zlozene len z cisiel
-        if (isset($_POST['num'])) {
-            if (is_numeric($_POST['num'])) {
-                $num = $_POST['num'];
-            } else {
-                $numError = "Telefónne číslo sa musí skladať len z čísiel vo formáte 09...";   
-            }
-        } elseif empty($_POST["num"]) {
-            $numError = "Telefónne číslo je povinné.";   
-        } 
-        
-        // zisti aku moznost ano/nie pouzivatel zaskrtol
-        if (isset($_POST['isLiked'])) {
-            $answers = array('Ano', 'Nie');
-            $chosen = $_POST['isLiked'];
-
-            if (in_array($chosen, $answers)) {
-                if(strcasecmp($chosen, 'Ano') == 0) {
-                    $isLiked = "Ano";
-                } else {
-                    $isLiked = "Nie";
-                }
-            }
-        } elseif (empty($_POST["isLiked"])) {
-            $isLiked = "";
-        }
-
-        // uloží email
-        if (empty($_POST['email'])) {
-            $email = "";
+    
+    // skontroluje ci je meno zlozene len z pismen
+    if (isset($_POST['name'])) {
+        if (var_dump(IntlChar::isalpha($_POST['name']))) {
+            $name = $_POST['name'];
         } else {
-            $email = $_POST['email'];
+            $nameError = "Meno sa musí skladať z písmen.";   
         }
+    } elseif (empty($_POST["name"])) {
+        $nameError = "Meno je povinné.";
+    }
 
-        // uloží názor
-        if (empty($_POST['opinion'])) {
-            $opinion = "";
+    // skontroluje ci je priezvisko zlozene len z pismen
+    if (isset($_POST['surname'])) {
+        if (var_dump(IntlChar::isalpha($_POST['surname']))) {
+            $surname = $_POST['surname'];
         } else {
-            $opinion = $_POST['opinion'];
+            $surnameError = "Priezvisko sa musí skladať z písmen.";   
         }
+    } elseif (empty($_POST["surname"])) {
+        $surnameError = "Priezvisko je povinné.";
+    }
+
+    // skontroluje ci je telefonne cislo zlozene len z cisiel
+    if (isset($_POST['num'])) {
+        if (is_numeric($_POST['num'])) {
+            $num = $_POST['num'];
+        } else {
+            $numError = "Telefónne číslo sa musí skladať len z čísiel vo formáte 09...";   
+        }
+    } elseif empty($_POST["num"]) {
+        $numError = "Telefónne číslo je povinné.";   
+    } 
+    
+    // zisti aku moznost ano/nie pouzivatel zaskrtol
+    if (isset($_POST['isLiked'])) {
+        $answers = array('Ano', 'Nie');
+        $chosen = $_POST['isLiked'];
+
+        if (in_array($chosen, $answers)) {
+            if(strcasecmp($chosen, 'Ano') == 0) {
+                $isLiked = "Ano";
+            } else {
+                $isLiked = "Nie";
+            }
+        }
+    } elseif (empty($_POST["isLiked"])) {
+        $isLiked = "";
+    }
+
+    // uloží email
+    if (empty($_POST['email'])) {
+        $email = "";
+    } else {
+        $email = $_POST['email'];
+    }
+
+    // uloží názor
+    if (empty($_POST['opinion'])) {
+        $opinion = "";
+    } else {
+        $opinion = $_POST['opinion'];
     }
 
     $text = "Meno: " . $name . " " . $surname . "\r\n";
