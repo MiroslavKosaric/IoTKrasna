@@ -16,7 +16,7 @@
                 $nameEnteredRight = true;
             } 
             // detegovanie cinskych znakov
-            elseif (preg_match("/\p{Han}+/u", $bio)) {
+            elseif (preg_match("/\p{Han}+/u", trim($_POST['name']))) {
                 $name = trim($_POST['name']);
                 $nameEnteredRight = true;
             }
@@ -34,7 +34,7 @@
                 $surnameEnteredRight = true;
             } 
             // detegovanie cinskych znakov
-            elseif (preg_match("/\p{Han}+/u", $bio)) {
+            elseif (preg_match("/\p{Han}+/u", trim($_POST['surname']))) {
                 $surname = trim($_POST['surname']);
                 $surnameEnteredRight = true;
             }
