@@ -11,7 +11,7 @@
         if (empty($_POST["name"])) {
             $nameError = "Meno je povinné.";
         } else {
-            if (ctype_alpha($_POST['name'])) {
+            if (ctype_alpha(trim($_POST['name']))) {
                 $name = $_POST['name'];
                 $nameEnteredRight = true;
             } else {
@@ -23,7 +23,7 @@
         if (empty($_POST["surname"])) {
             $surnameError = "Priezvisko je povinné.";
         } else {
-            if (ctype_alpha($_POST['surname'])) {
+            if (ctype_alpha(trim($_POST['surname']))) {
                 $surname = $_POST['surname'];
                 $surnameEnteredRight = true;
             } else {
@@ -35,7 +35,7 @@
         if (empty($_POST["num"])) {
             $numError = "Telefónne číslo je povinné.";  
         } else {
-            if (ctype_digit($_POST['num'])) {
+            if (ctype_digit(trim($_POST['num']))) {
                 $num = $_POST['num'];
                 $numEnteredRight = true;
             } else {
