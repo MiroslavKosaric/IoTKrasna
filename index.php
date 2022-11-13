@@ -90,7 +90,13 @@
 
             fclose($data);
 
-            echo '<script type="text/javascript"> thanks() </script>';
+            echo '<script type="text/javascript">
+                function thanks() {
+                    alert("Ďakujem za vyplnenie dotazníka");
+                }
+
+                thanks();
+            </script>';
         }
     }
 ?>
