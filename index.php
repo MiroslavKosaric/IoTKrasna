@@ -89,6 +89,8 @@
             fwrite($data, $text);
 
             fclose($data);
+
+            thanks();
         }
     }
 ?>
@@ -134,7 +136,7 @@
 
             <br><br><br><br>
             <hr>
-            <button class="submitButton" onclick="thanks()">ODOSLAŤ</button>
+            <button class="submitButton">ODOSLAŤ</button>
         </form>
     </div>
 </body>
