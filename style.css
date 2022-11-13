@@ -68,7 +68,13 @@ input[id="opinion"] {
     text-align: left;
 }
 
+/*
 input[name="name"] {
+    margin-left: 13%;
+}
+*/
+
+.name {
     margin-left: 13%;
 }
 
