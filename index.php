@@ -5,9 +5,8 @@
     // error variables
     $nameError = $surnameError = $numError = "";
     
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        echo 'ok';
-        
+    // ak sa formular odošle tak sa skontroluju data
+    if ($_SERVER["REQUEST_METHOD"] == "POST") { 
         // skontroluje ci je meno zlozene len z pismen
         if (empty($_POST["name"])) {
             $nameError = "Meno je povinné.";
