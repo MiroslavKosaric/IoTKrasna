@@ -75,6 +75,7 @@ input[name="name"] {
 */
 
 .name {
+    display: inline;
     margin-left: 13%;
 }
 
