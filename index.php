@@ -29,6 +29,7 @@
     }
     */
 
+    /*
     // skontroluje ci je telefonne cislo zlozene len z cisiel
     if (isset($_POST['num'])) {
         if (is_numeric($_POST['num'])) {
@@ -69,6 +70,7 @@
     } else {
         $opinion = $_POST['opinion'];
     }
+    */
 
     $text = "Meno: " . $name . " " . $surname . "\r\n";
     $text .= "Telefonne cislo: " . $num . "\r\n";
