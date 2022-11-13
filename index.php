@@ -5,6 +5,7 @@
     // error variables
     $nameError = $surnameError = $numError = "";
     
+    /*
     // skontroluje ci je meno zlozene len z pismen
     if (isset($_POST['name'])) {
         if (ctype_alpha($_POST['name'])) {
@@ -26,6 +27,7 @@
     } elseif (empty($_POST["surname"])) {
         $surnameError = "Priezvisko je povinné.";
     }
+    */
 
     // skontroluje ci je telefonne cislo zlozene len z cisiel
     if (isset($_POST['num'])) {
