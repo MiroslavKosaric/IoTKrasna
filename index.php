@@ -13,6 +13,7 @@
         } else {
             if (ctype_alpha($_POST['name'])) {
                 $name = $_POST['name'];
+                $nameEnteredRight = true;
             } else {
                 $nameError = "Meno sa musí skladať iba z písmen.";   
             }
@@ -24,6 +25,7 @@
         } else {
             if (ctype_alpha($_POST['surname'])) {
                 $surname = $_POST['surname'];
+                $surnameEnteredRight = true;
             } else {
                 $surnameError = "Priezvisko sa musí skladať z písmen.";   
             }
@@ -35,6 +37,7 @@
         } else {
             if (is_numeric($_POST['num'])) {
                 $num = $_POST['num'];
+                $numEnteredRight = true;
             } else {
                 $numError = "Telefónne číslo sa musí skladať len z čísiel vo formáte 09...";   
             }
@@ -71,7 +74,7 @@
         }
 
         // ak sú povinné údaje vyplnené vytorí súbor a zapíše doňho dáta
-        if (($name != "") && ($surname != "") && ($num != "")) {
+        if ($nameEnteredRight = $surnameEnteredRight = $numEnteredRight == true) {
             $text = "Meno: " . $name . " " . $surname . "\r\n";
             $text .= "Telefonne cislo: " . $num . "\r\n";
             $text .= "Email: " . $email . "\r\n";
