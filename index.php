@@ -5,6 +5,8 @@
     // error variables
     $nameError = $surnameError = $numError = "";
     
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        echo 'ok';
     /*
     // skontroluje ci je meno zlozene len z pismen
     if (isset($_POST['name'])) {
@@ -71,6 +73,7 @@
         $opinion = $_POST['opinion'];
     }
     */
+    }
 
     $text = "Meno: " . $name . " " . $surname . "\r\n";
     $text .= "Telefonne cislo: " . $num . "\r\n";
