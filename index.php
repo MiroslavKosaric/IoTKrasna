@@ -74,7 +74,11 @@
         }
 
         // ak sú povinné údaje vyplnené vytorí súbor a zapíše doňho dáta
-        if ($nameEnteredRight == $surnameEnteredRight == $numEnteredRight == true) {
+        if ($nameEnteredRight == true &&
+            $surnameEnteredRight == true &&
+            $numEnteredRight == true
+           ) {
+
             $text = "Meno: " . $name . " " . $surname . "\r\n";
             $text .= "Telefonne cislo: " . $num . "\r\n";
             $text .= "Email: " . $email . "\r\n";
