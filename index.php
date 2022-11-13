@@ -34,7 +34,7 @@
         } else {
             $numError = "Telefónne číslo sa musí skladať len z čísiel vo formáte 09...";   
         }
-    } elseif empty($_POST["num"]) {
+    } elseif (empty($_POST["num"])) {
         $numError = "Telefónne číslo je povinné.";   
     } 
     
