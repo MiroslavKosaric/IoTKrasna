@@ -27,7 +27,7 @@
                 $surname = trim($_POST['surname']);
                 $surnameEnteredRight = true;
             } else {
-                $surnameError = "Priezvisko sa musí skladať z písmen.";   
+                $surnameError = "Priezvisko sa musí skladať iba z písmen.";   
             }
         } 
 
@@ -74,7 +74,7 @@
         }
 
         // ak sú povinné údaje vyplnené vytorí súbor a zapíše doňho dáta
-        if ($nameEnteredRight = $surnameEnteredRight = $numEnteredRight == true) {
+        if ($nameEnteredRight == $surnameEnteredRight == $numEnteredRight == true) {
             $text = "Meno: " . $name . " " . $surname . "\r\n";
             $text .= "Telefonne cislo: " . $num . "\r\n";
             $text .= "Email: " . $email . "\r\n";
