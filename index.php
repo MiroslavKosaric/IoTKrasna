@@ -97,7 +97,8 @@
             $text .= "Paci sa mu/jej IPaIoT: " . $isLiked . "\r\n";
             $text .= "Nazor na predmet: " . $opinion;
 
-            $data = fopen("data.txt", "w") or die("Unable to open file!");
+            $data = fopen("data.txt", "wb") or die("Unable to open file!");
+            fwrite($data, pack("CCC",0xef,0xbb,0xbf));
             fwrite($data, $text);
 
             fclose($data);
