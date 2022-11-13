@@ -69,18 +69,21 @@
         } else {
             $opinion = $_POST['opinion'];
         }
+
+        // ak sú povinné údaje vyplnené vytorí súbor a zapíše doňho dáta
+        if (($name != "") && ($surname != "") && ($num != "")) {
+            $text = "Meno: " . $name . " " . $surname . "\r\n";
+            $text .= "Telefonne cislo: " . $num . "\r\n";
+            $text .= "Email: " . $email . "\r\n";
+            $text .= "Paci sa mu/jej IPaIoT: " . $isLiked . "\r\n";
+            $text .= "Nazor na predmet: " . $opinion;
+
+            $data = fopen("data.txt", "w") or die("Unable to open file!");
+            fwrite($data, $text);
+
+            fclose($data);
+        }
     }
-
-    $text = "Meno: " . $name . " " . $surname . "\r\n";
-    $text .= "Telefonne cislo: " . $num . "\r\n";
-    $text .= "Email: " . $email . "\r\n";
-    $text .= "Paci sa mu/jej IPaIoT: " . $isLiked . "\r\n";
-    $text .= "Nazor na predmet: " . $opinion;
-
-    $data = fopen("data.txt", "w") or die("Unable to open file!");
-    fwrite($data, $text);
-
-    fclose($data);
 ?>
 
 <html lang="sk">
