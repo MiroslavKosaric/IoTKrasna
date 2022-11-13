@@ -9,28 +9,26 @@
         echo 'ok';
         
         // skontroluje ci je meno zlozene len z pismen
-        if (isset($_POST['name'])) {
+        if (empty($_POST["name"])) {
+            $nameError = "Meno je povinné.";
+        } else {
             if (ctype_alpha($_POST['name'])) {
                 $name = $_POST['name'];
             } else {
                 $nameError = "Meno sa musí skladať iba z písmen.";   
             }
-        } elseif (empty($_POST["name"])) {
-            $nameError = "Meno je povinné.";
         }
-
-        /*
+        
         // skontroluje ci je priezvisko zlozene len z pismen
-        if (isset($_POST['surname'])) {
+        if (empty($_POST["surname"])) {
+            $surnameError = "Priezvisko je povinné.";
+        } else {
             if (ctype_alpha($_POST['surname'])) {
                 $surname = $_POST['surname'];
             } else {
                 $surnameError = "Priezvisko sa musí skladať z písmen.";   
             }
-        } elseif (empty($_POST["surname"])) {
-            $surnameError = "Priezvisko je povinné.";
-        }
-        */
+        } 
 
         /*
         // skontroluje ci je telefonne cislo zlozene len z cisiel
