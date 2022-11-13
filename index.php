@@ -12,7 +12,7 @@
             $nameError = "Meno je povinné.";
         } else {
             if (ctype_alpha(trim($_POST['name']))) {
-                $name = $_POST['name'];
+                $name = trim($_POST['name']);
                 $nameEnteredRight = true;
             } else {
                 $nameError = "Meno sa musí skladať iba z písmen.";   
@@ -24,7 +24,7 @@
             $surnameError = "Priezvisko je povinné.";
         } else {
             if (ctype_alpha(trim($_POST['surname']))) {
-                $surname = $_POST['surname'];
+                $surname = trim($_POST['surname']);
                 $surnameEnteredRight = true;
             } else {
                 $surnameError = "Priezvisko sa musí skladať z písmen.";   
@@ -36,7 +36,7 @@
             $numError = "Telefónne číslo je povinné.";  
         } else {
             if (ctype_digit(trim($_POST['num']))) {
-                $num = $_POST['num'];
+                $num = trim($_POST['num']);
                 $numEnteredRight = true;
             } else {
                 $numError = "Telefónne číslo sa musí skladať len z čísiel vo formáte 09...";   
