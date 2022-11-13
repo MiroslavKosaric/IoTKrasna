@@ -14,13 +14,7 @@
             if (ctype_alpha(trim($_POST['name']))) {
                 $name = trim($_POST['name']);
                 $nameEnteredRight = true;
-            } 
-            // detegovanie cinskych znakov
-            elseif (preg_match("/\p{Han}+/u", trim($_POST['name']))) {
-                $name = trim($_POST['name']);
-                $nameEnteredRight = true;
-            }
-            else {
+            } else {
                 $nameError = "Meno sa musí skladať iba z písmen.";   
             }
         }
@@ -32,13 +26,7 @@
             if (ctype_alpha(trim($_POST['surname']))) {
                 $surname = trim($_POST['surname']);
                 $surnameEnteredRight = true;
-            } 
-            // detegovanie cinskych znakov
-            elseif (preg_match("/\p{Han}+/u", trim($_POST['surname']))) {
-                $surname = trim($_POST['surname']);
-                $surnameEnteredRight = true;
-            }
-            else {
+            } else {
                 $surnameError = "Priezvisko sa musí skladať iba z písmen.";   
             }
         } 
@@ -97,8 +85,7 @@
             $text .= "Paci sa mu/jej IPaIoT: " . $isLiked . "\r\n";
             $text .= "Nazor na predmet: " . $opinion;
 
-            $data = fopen("data.txt", "wb") or die("Unable to open file!");
-            fwrite($data, pack("CCC",0xef,0xbb,0xbf));
+            $data = fopen("data.txt", "w") or die("Unable to open file!");
             fwrite($data, $text);
 
             fclose($data);
