@@ -7,7 +7,7 @@
     
     // skontroluje ci je meno zlozene len z pismen
     if (isset($_POST['name'])) {
-        if (var_dump(IntlChar::isalpha($_POST['name']))) {
+        if (ctype_alpha($_POST['name'])) {
             $name = $_POST['name'];
         } else {
             $nameError = "Meno sa musí skladať z písmen.";   
@@ -18,7 +18,7 @@
 
     // skontroluje ci je priezvisko zlozene len z pismen
     if (isset($_POST['surname'])) {
-        if (var_dump(IntlChar::isalpha($_POST['surname']))) {
+        if (ctype_alpha($_POST['surname'])) {
             $surname = $_POST['surname'];
         } else {
             $surnameError = "Priezvisko sa musí skladať z písmen.";   
