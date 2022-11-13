@@ -76,6 +76,7 @@ input[name="name"] {
 
 .name {
     display: inline;
+    float: right;
     margin-left: 13%;
 }
 
