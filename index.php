@@ -116,8 +116,7 @@
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
             <label for="name">Vaše meno</label>
             <input type="text" id="name" name="name" placeholder="Meno" autofocus>
-            <span class="required">*</span>
-            <div><?php echo $nameError;?></div>
+            <span class="required">* <?php echo $nameError;?></span>
             <input type="text" id="surname" name="surname" placeholder="Priezvisko">
             <span class="required">* <?php echo $surnameError;?></span>
 
